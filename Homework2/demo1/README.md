@@ -43,6 +43,13 @@ Summary
 ```
 
 
+### use npm to install truffle, truffle-hdwallet-provider and dotenv
+```
+$ npm install -g truffle
+$ npm install @truffle/hdwallet-provider
+$ npm install dotenv
+```
+
 ## Deploy the New Smart Contract
 ```
 $truffle compile                       
