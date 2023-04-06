@@ -33,30 +33,6 @@ contract Callee {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 contract Caller {
     address public owner;
     uint256 public balance;

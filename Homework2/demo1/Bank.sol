@@ -19,6 +19,15 @@ contract Bank {
         uint amount: The money you want to withdraw
         address payable destAddr: The withdrawal destination address
     */
+
+    function get_owner() view public returns (address){
+        return owner; 
+    }
+
+    function get_balance() view public returns(uint256){
+        return balance;
+    }
+    
     function withdraw_myself(uint amount, address payable destAddr) public {        
         (bool success, ) = destAddr.call{gas: 1000000, value:amount}("");
         balance -= amount;
