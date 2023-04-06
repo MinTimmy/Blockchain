@@ -1,5 +1,6 @@
 # Blockchain
 
+## The Information of the Smart Contract
 ```
 Starting migrations...
 ======================
@@ -39,4 +40,42 @@ Summary
 > Total deployments:   1
 > Final cost:          0.001017257502848321 ETH
 
+```
+
+
+## Deploy the New Smart Contract
+```
+$truffle compile                       
+```
+
+```
+$truffle migrate --network sepolia
+```
+
+## Truffle Console commands
+
+Open the console
+```
+$ truffle console --network sepolia
+```
+
+Connect to the smart contract
+```
+$ let contract = await Bank.at('0x7Bd49e5A1d6F906100A2f1Fd2d34F663c1857De7')
+```
+
+Assign the output of the function get_balance to the variable balance
+```
+$ let balance = await contract.get_balance()
+```
+
+Show the variable balance.
+```
+$ console.log('Balance of Account 0 =', BigInt(balance));
+
+```
+
+Call the function withdraw_myself
+```
+$ contract.withdraw_myself(10000000000000000n, '0x5616d860E7Bd36A1dc6188e788251A0A794f0d45')
 ```
