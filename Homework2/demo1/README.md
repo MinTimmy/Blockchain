@@ -52,11 +52,11 @@ $ npm install dotenv
 
 ## Deploy the New Smart Contract
 ```
-$truffle compile                       
+$ truffle compile                       
 ```
 
 ```
-$truffle migrate --network sepolia
+$ truffle migrate --network sepolia
 ```
 
 ## Truffle Console commands
@@ -85,4 +85,15 @@ $ console.log('Balance of Account 0 =', BigInt(balance));
 Call the function withdraw_myself
 ```
 $ contract.withdraw_myself(10000000000000000n, '0x5616d860E7Bd36A1dc6188e788251A0A794f0d45')
+```
+
+Run the smart contract with the js file.
+```
+$ truffle exec run.js
+```
+
+
+Test the smart contract.
+```
+$ truffle test
 ```

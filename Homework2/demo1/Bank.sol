@@ -8,12 +8,17 @@ contract Bank {
     constructor() {
         owner = msg.sender; // store information who deployed contract
     }
-    
+    event DepositLog(address sender);
+
     receive() payable external {
         balance += msg.value; // keep track of balance (in WEI)
+        emit DepositLog(msg.sender);
     }
 
-
+    function deposit() public payable {
+        balance += msg.value; //存款
+        emit DepositLog(msg.sender);
+    }
     /*
         Function: Withdraw the amount of money from smart contract to the withdrawal destination address
         uint amount: The money you want to withdraw
@@ -35,9 +40,9 @@ contract Bank {
     }
 
     // Contract destructor
-    function destroy() public {
+    function destroy() view public {
         require(msg.sender == owner, "msg.sender is not the owner");
-        selfdestruct(payable(owner));
+        // selfdestruct(payable(owner));
     }
 
 }
